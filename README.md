@@ -42,5 +42,5 @@ During daytime, the solar panel charges the battery. At night, lights turn ON on
 
 👨‍💻 Author
 
-Aashis Kumar
+Himanshu Sahani 
 B.Tech Student
