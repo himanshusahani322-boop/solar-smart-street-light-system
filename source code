@@ -1,0 +1,91 @@
+int ir1 = 8;
+int ir2 = 9;
+int ledPins[5] = {7, 6, 5, 4, 3};
+
+int ldrPin = A0;
+
+int count = 0;
+bool lightState = false;
+
+bool ir1State = false;
+bool ir2State = false;
+
+void setup() {
+  pinMode(ir1, INPUT);
+  pinMode(ir2, INPUT);
+  pinMode(ldrPin, INPUT);
+
+  for (int i = 0; i < 5; i++) {
+    pinMode(ledPins[i], OUTPUT);
+  }
+
+  Serial.begin(9600);
+}
+
+void turnOnEffect() {
+  for (int i = 0; i < 5; i++) {
+    digitalWrite(ledPins[i], HIGH);
+    delay(100);
+  }
+}
+
+void turnOffEffect() {
+  for (int i = 4; i >= 0; i--) {
+    digitalWrite(ledPins[i], LOW);
+    delay(100);
+  }
+}
+
+void loop() {
+
+  int ldrState = digitalRead(ldrPin);
+
+  if (ldrState == HIGH) {
+
+    if (digitalRead(ir1) == LOW && !ir1State) {
+      delay(50);
+      if (digitalRead(ir1) == LOW) {
+        count++;
+        ir1State = true;
+
+        if (!lightState) {
+          turnOnEffect();
+          lightState = true;
+        }
+      }
+    }
+
+    if (digitalRead(ir1) == HIGH) {
+      ir1State = false;
+    }
+
+    if (digitalRead(ir2) == LOW && !ir2State) {
+      delay(50);
+      if (digitalRead(ir2) == LOW) {
+        if (count > 0) {
+          count--;
+        }
+        ir2State = true;
+
+        if (count == 0 && lightState) {
+          turnOffEffect();
+          lightState = false;
+        }
+      }
+    }
+
+    if (digitalRead(ir2) == HIGH) {
+      ir2State = false;
+    }
+
+  } else {
+
+    if (lightState) {
+      turnOffEffect();
+      lightState = false;
+      count = 0;
+    }
+  }
+
+  Serial.println(count);
+}
