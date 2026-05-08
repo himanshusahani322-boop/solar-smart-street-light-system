@@ -38,6 +38,7 @@ During daytime, the solar panel charges the battery. At night, lights turn ON on
 
 - IoT Monitoring
 - WiFi Control
+- and meny more
 - Auto Brightness Control
 
 👨‍💻 Author
