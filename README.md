@@ -1,22 +1,22 @@
 
-Smart Street Light System 🚦☀️💡
+Smart Street Light System 
 
-📌 Project Overview
+  Project Overview
 
 This project is a Solar Powered Smart Street Light System designed to save energy using motion detection and automatic night sensing.
 
 During daytime, the solar panel charges the battery. At night, lights turn ON only when motion is detected.
 
-⚙️ Features
+  Features
 
-- Solar charging system ☀️
-- Battery backup 🔋
-- Motion detection using IR sensor 🚶
-- Automatic ON/OFF 💡
-- Energy saving ⚡
-- Low cost and eco-friendly 🌍
+- Solar charging system 
+- Battery backup 
+- Motion detection using IR sensor 
+- Automatic ON/OFF 
+- Energy saving 
+- Low cost and eco-friendly 
 
-🧰 Components Used
+  Components Used
 
 - Solar Panel
 - 3.7V Battery
@@ -27,21 +27,14 @@ During daytime, the solar panel charges the battery. At night, lights turn ON on
 - Resistors
 - Wires
 
-🔌 Working Principle
+  Working Principle
 
 - Daytime: Solar panel charges battery
 - Night: LDR activates system
 - Motion detected: LED turns ON
 - No motion: LED turns OFF
 
-🚀 Future Improvements
-
-- IoT Monitoring
-- WiFi Control
-- and meny more
-- Auto Brightness Control
-
-👨‍💻 Author
+  Author
 
 Himanshu Sahani 
 B.Tech Student
